@@ -29,7 +29,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInstruction));
             this.buttonOk_EKP = new System.Windows.Forms.Button();
             this.textBoxInstruction_EKP = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -56,7 +55,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.textBoxInstruction_EKP.Size = new System.Drawing.Size(596, 298);
             this.textBoxInstruction_EKP.TabIndex = 1;
             this.textBoxInstruction_EKP.TabStop = false;
-            this.textBoxInstruction_EKP.Text = resources.GetString("textBoxInstruction_EKP.Text");
             // 
             // FormInstruction
             // 

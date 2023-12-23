@@ -15,6 +15,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         public FormAbout()
         {
             InitializeComponent();
+            this.textBoxAbout_EKP.Text = "Разработчик: Емельянова К. П.\r\nГруппа: ПКТб-23-1\r\n\r\nПрограмма разработана в рамках изучения языка C#\r\n\r\nТюменский индустриальный университет (с) 2023\r\nВысшая школа цифровых технологий (с) 2023\r\n\r\nВнутреннее имя: Tyuiu.EmelianovaKP.Sprint7.Project.V2\r\n";
         }
 
         private void buttonDone_EKP_Click(object sender, EventArgs e)
