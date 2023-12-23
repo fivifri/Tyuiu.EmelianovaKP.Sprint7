@@ -240,6 +240,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.MainMenuStrip = this.menuStripTopMenu_EKP;
             this.MinimumSize = new System.Drawing.Size(788, 489);
             this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Сеть магазинов";
             this.panelLeft_EKP.ResumeLayout(false);
             this.menuStripTopMenu_EKP.ResumeLayout(false);

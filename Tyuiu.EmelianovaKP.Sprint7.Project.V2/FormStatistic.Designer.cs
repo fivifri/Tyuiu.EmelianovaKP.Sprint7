@@ -168,6 +168,7 @@
             this.Controls.Add(this.labelCountShops_EKP);
             this.Controls.Add(this.textBoxCountShops_EKP);
             this.Name = "FormStatistic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Статистика по капиталу";
             this.Load += new System.EventHandler(this.FormStatistic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartCapital_EKP)).EndInit();
