@@ -41,11 +41,8 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             {
                 openFileDialogTask_EKP.ShowDialog();
                 openFilePath = openFileDialogTask_EKP.FileName;
-                string[,] arrayValues = new string[rows, columns];
 
-                arrayValues = ds.LoadFromFileData(openFilePath, ref rows, ref columns);
-
-                arrayValues = ds.GetDataBase(openFilePath);
+                string[,] arrayValues = ds.GetDataBase(openFilePath, ref rows, ref columns);
                 buttonDelete_EKP.Enabled = true;
                 buttonEdit_EKP.Enabled = true;
                 buttonStatistic_EKP.Visible = true;
@@ -77,7 +74,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
                     }
                 }
 
-                arrayValues = ds.GetDataBase(openFilePath);
                 buttonDelete_EKP.Visible = true;
                 buttonEdit_EKP.Visible = true;
                 buttonAdd_EKP.Visible = true;

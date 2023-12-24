@@ -9,14 +9,14 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2.Lib
 {
     public class DataService
     {
-        public string[,] GetDataBase(string path)
+        public string[,] GetDataBase(string path, ref int rows, ref int columns)
         {
             string file = File.ReadAllText(path);
             file = file.Replace('\n', '\r');
             string[] lines = file.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
 
-            int rows = lines.Length;
-            int columns = lines[0].Split(';').Length;
+            rows = lines.Length;
+            columns = lines[0].Split(';').Length;
 
             string[,] array = new string[rows, columns];
             for (int i = 0; i < rows; i++)
