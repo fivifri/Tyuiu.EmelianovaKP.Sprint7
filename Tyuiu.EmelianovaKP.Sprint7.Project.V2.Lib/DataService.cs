@@ -30,29 +30,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2.Lib
             return array;
         }
 
-        public string[,] LoadFromFileData(string filePath, ref int rows, ref int columns)
-        {
-            string FileData = File.ReadAllText(filePath);
-
-            FileData = FileData.Replace('\n', '\r');
-            string[] lines = FileData.Split(new char[] { '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-            rows = lines.Length;
-            columns = lines[0].Split(';').Length;
-
-            string[,] arrayValues = new string[rows, columns];
-
-            for (int r = 0; r < rows; r++)
-            {
-                string[] line_r = lines[r].Split(';');
-                for (int c = 0; c < columns; c++)
-                {
-                    arrayValues[r, c] = line_r[c];
-                }
-            }
-            return arrayValues;
-        }
-
         public int SumCapital(ref int[] ArrayCapital)
         {
             return ArrayCapital.Sum();

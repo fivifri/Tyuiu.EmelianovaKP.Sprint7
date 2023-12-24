@@ -209,6 +209,9 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             // 
             // dataGridViewMain_EKP
             // 
+            this.dataGridViewMain_EKP.AllowUserToAddRows = false;
+            this.dataGridViewMain_EKP.AllowUserToDeleteRows = false;
+            this.dataGridViewMain_EKP.AllowUserToOrderColumns = true;
             this.dataGridViewMain_EKP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewMain_EKP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMain_EKP.Dock = System.Windows.Forms.DockStyle.Fill;

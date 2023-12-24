@@ -30,7 +30,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         }
 
         DataService ds = new DataService();
-
         int rows;
         int columns;
         string openFilePath;
@@ -48,13 +47,12 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
                 buttonStatistic_EKP.Visible = true;
 
                 dataGridViewMain_EKP.ColumnCount = columns;
-                dataGridViewMain_EKP.RowCount = rows;
+                dataGridViewMain_EKP.RowCount = rows - 1;
 
-                dataGridViewMain_EKP.Columns[0].HeaderText = "Идентификатор";
-                dataGridViewMain_EKP.Columns[1].HeaderText = "Название";
-                dataGridViewMain_EKP.Columns[2].HeaderText = "Адрес";
-                dataGridViewMain_EKP.Columns[3].HeaderText = "Номер телефона";
-                dataGridViewMain_EKP.Columns[4].HeaderText = "Капитал владельца";
+                for (int i = 0; i < columns; ++i)
+                {
+                    dataGridViewMain_EKP.Columns[i].HeaderText = arrayValues[0, i];
+                }
 
                 for (int i = 0; i < columns; ++i)
                 {
@@ -62,15 +60,11 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
                 }
 
 
-                dataGridViewMain_EKP.Rows[0].ReadOnly = true;
-                dataGridViewMain_EKP.Columns[0].ReadOnly = true;
-
-
-                for (int r = 0; r < rows; r++)
+                for (int r = 1; r < rows; r++)
                 {
                     for (int c = 0; c < columns; c++)
                     {
-                        dataGridViewMain_EKP.Rows[r].Cells[c].Value = arrayValues[r, c];
+                        dataGridViewMain_EKP.Rows[r - 1].Cells[c].Value = arrayValues[r, c];
                     }
                 }
 
