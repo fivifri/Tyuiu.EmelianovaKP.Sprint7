@@ -43,7 +43,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
 
                 string[,] arrayValues = ds.GetDataBase(openFilePath, ref rows, ref columns);
                 buttonDelete_EKP.Enabled = true;
-                buttonEdit_EKP.Enabled = true;
                 buttonStatistic_EKP.Visible = true;
 
                 dataGridViewMain_EKP.ColumnCount = columns;
@@ -69,7 +68,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
                 }
 
                 buttonDelete_EKP.Visible = true;
-                buttonEdit_EKP.Visible = true;
                 buttonAdd_EKP.Visible = true;
                 buttonSearch_EKP.Visible = true;
                 buttonSaveFile_EKP.Enabled = true;
@@ -96,7 +94,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
                 if (dataGridViewMain_EKP.Rows.Count <= 1)
                 {
                     buttonDelete_EKP.Enabled = false;
-                    buttonEdit_EKP.Enabled = false;
                 }
                 if (dataGridViewMain_EKP.Rows.Count > 1)
                 {
@@ -113,25 +110,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         private void buttonAdd_EKP_Click(object sender, EventArgs e)
         {
             this.dataGridViewMain_EKP.Rows.Add();
-        }
-
-        private void buttonEdit_EKP_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int index = dataGridViewMain_EKP.CurrentRow.Index;
-                FormEdit rowData = new FormEdit(this);
-                rowData.textBoxNumber_EKP.Text = dataGridViewMain_EKP.Rows[index].Cells[0].Value.ToString();
-                rowData.textBoxName_EKP.Text = dataGridViewMain_EKP.Rows[index].Cells[1].Value.ToString();
-                rowData.textBoxAddress_EKP.Text = dataGridViewMain_EKP.Rows[index].Cells[2].Value.ToString();
-                rowData.textBoxPhoneNumber_EKP.Text = dataGridViewMain_EKP.Rows[index].Cells[3].Value.ToString();
-                rowData.textBoxOwnersCapital_EKP.Text = dataGridViewMain_EKP.Rows[index].Cells[4].Value.ToString();
-                rowData.ShowDialog();
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка редактирования!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void buttonSearch_EKP_Click(object sender, EventArgs e)

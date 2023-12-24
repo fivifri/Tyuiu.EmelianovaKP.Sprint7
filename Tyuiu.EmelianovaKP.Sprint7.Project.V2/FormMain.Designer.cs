@@ -38,7 +38,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.buttonSearch_EKP = new System.Windows.Forms.Button();
             this.buttonDelete_EKP = new System.Windows.Forms.Button();
             this.buttonAdd_EKP = new System.Windows.Forms.Button();
-            this.buttonEdit_EKP = new System.Windows.Forms.Button();
             this.openFileDialogTask_EKP = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialogTask_EKP = new System.Windows.Forms.SaveFileDialog();
             this.toolTipButton_EKP = new System.Windows.Forms.ToolTip(this.components);
@@ -64,7 +63,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.panelLeft_EKP.Controls.Add(this.buttonSearch_EKP);
             this.panelLeft_EKP.Controls.Add(this.buttonDelete_EKP);
             this.panelLeft_EKP.Controls.Add(this.buttonAdd_EKP);
-            this.panelLeft_EKP.Controls.Add(this.buttonEdit_EKP);
             this.panelLeft_EKP.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft_EKP.Location = new System.Drawing.Point(0, 24);
             this.panelLeft_EKP.Name = "panelLeft_EKP";
@@ -135,26 +133,14 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             // buttonAdd_EKP
             // 
             this.buttonAdd_EKP.BackgroundImage = global::Tyuiu.EmelianovaKP.Sprint7.Project.V2.Properties.Resources.add;
-            this.buttonAdd_EKP.Location = new System.Drawing.Point(48, 202);
+            this.buttonAdd_EKP.Location = new System.Drawing.Point(46, 164);
             this.buttonAdd_EKP.Name = "buttonAdd_EKP";
-            this.buttonAdd_EKP.Size = new System.Drawing.Size(34, 33);
+            this.buttonAdd_EKP.Size = new System.Drawing.Size(34, 32);
             this.buttonAdd_EKP.TabIndex = 0;
             this.toolTipButton_EKP.SetToolTip(this.buttonAdd_EKP, "Добавить строку");
             this.buttonAdd_EKP.UseVisualStyleBackColor = true;
             this.buttonAdd_EKP.Visible = false;
             this.buttonAdd_EKP.Click += new System.EventHandler(this.buttonAdd_EKP_Click);
-            // 
-            // buttonEdit_EKP
-            // 
-            this.buttonEdit_EKP.BackgroundImage = global::Tyuiu.EmelianovaKP.Sprint7.Project.V2.Properties.Resources.table_edit;
-            this.buttonEdit_EKP.Location = new System.Drawing.Point(48, 163);
-            this.buttonEdit_EKP.Name = "buttonEdit_EKP";
-            this.buttonEdit_EKP.Size = new System.Drawing.Size(34, 33);
-            this.buttonEdit_EKP.TabIndex = 0;
-            this.toolTipButton_EKP.SetToolTip(this.buttonEdit_EKP, "Редактировать");
-            this.buttonEdit_EKP.UseVisualStyleBackColor = true;
-            this.buttonEdit_EKP.Visible = false;
-            this.buttonEdit_EKP.Click += new System.EventHandler(this.buttonEdit_EKP_Click);
             // 
             // openFileDialogTask_EKP
             // 
@@ -265,7 +251,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         private System.Windows.Forms.MenuStrip menuStripTopMenu_EKP;
         private System.Windows.Forms.ToolStripMenuItem помощьToolStripMenuItem;
         public System.Windows.Forms.Button buttonDelete_EKP;
-        private System.Windows.Forms.Button buttonEdit_EKP;
         public System.Windows.Forms.DataGridView dataGridViewMain_EKP;
         private System.Windows.Forms.Panel panelRight_EKP;
         private System.Windows.Forms.Button buttonSearch_EKP;
