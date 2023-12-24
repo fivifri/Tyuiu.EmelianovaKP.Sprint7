@@ -112,8 +112,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
 
         private void buttonAdd_EKP_Click(object sender, EventArgs e)
         {
-            FormAdd formAdd = new FormAdd(this);
-            formAdd.ShowDialog();
+            this.dataGridViewMain_EKP.Rows.Add();
         }
 
         private void buttonEdit_EKP_Click(object sender, EventArgs e)
