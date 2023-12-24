@@ -37,51 +37,57 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
 
         private void buttonOpenFile_EKP_Click(object sender, EventArgs e)
         {
-            openFileDialogTask_EKP.ShowDialog();
-            openFilePath = openFileDialogTask_EKP.FileName;
-
-            string[,] arrayValues = new string[rows, columns];
-
-            arrayValues = ds.LoadFromFileData(openFilePath, ref rows, ref columns);
-
-            arrayValues = ds.GetDataBase(openFilePath);
-            buttonDelete_EKP.Enabled = true;
-            buttonEdit_EKP.Enabled = true;
-            buttonStatistic_EKP.Visible = true;
-
-            dataGridViewMain_EKP.ColumnCount = columns;
-            dataGridViewMain_EKP.RowCount = rows;
-
-            dataGridViewMain_EKP.Columns[0].HeaderText = "Идентификатор";
-            dataGridViewMain_EKP.Columns[1].HeaderText = "Название";
-            dataGridViewMain_EKP.Columns[2].HeaderText = "Адрес";
-            dataGridViewMain_EKP.Columns[3].HeaderText = "Номер телефона";
-            dataGridViewMain_EKP.Columns[4].HeaderText = "Капитал владельца";
-            
-            for (int i = 0; i < columns; ++i)
+            try
             {
-                dataGridViewMain_EKP.Columns[i].Width = 132;
-            }
+                openFileDialogTask_EKP.ShowDialog();
+                openFilePath = openFileDialogTask_EKP.FileName;
+                string[,] arrayValues = new string[rows, columns];
 
+                arrayValues = ds.LoadFromFileData(openFilePath, ref rows, ref columns);
 
-            dataGridViewMain_EKP.Rows[0].ReadOnly = true;
-            dataGridViewMain_EKP.Columns[0].ReadOnly = true;
+                arrayValues = ds.GetDataBase(openFilePath);
+                buttonDelete_EKP.Enabled = true;
+                buttonEdit_EKP.Enabled = true;
+                buttonStatistic_EKP.Visible = true;
 
+                dataGridViewMain_EKP.ColumnCount = columns;
+                dataGridViewMain_EKP.RowCount = rows;
 
-            for (int r = 0; r < rows; r++)
-            {
-                for (int c = 0; c < columns; c++)
+                dataGridViewMain_EKP.Columns[0].HeaderText = "Идентификатор";
+                dataGridViewMain_EKP.Columns[1].HeaderText = "Название";
+                dataGridViewMain_EKP.Columns[2].HeaderText = "Адрес";
+                dataGridViewMain_EKP.Columns[3].HeaderText = "Номер телефона";
+                dataGridViewMain_EKP.Columns[4].HeaderText = "Капитал владельца";
+
+                for (int i = 0; i < columns; ++i)
                 {
-                    dataGridViewMain_EKP.Rows[r].Cells[c].Value = arrayValues[r, c];
+                    dataGridViewMain_EKP.Columns[i].Width = 132;
                 }
-            }
 
-            arrayValues = ds.GetDataBase(openFilePath);
-            buttonDelete_EKP.Visible = true;
-            buttonEdit_EKP.Visible = true;
-            buttonAdd_EKP.Visible = true;
-            buttonSearch_EKP.Visible = true;
-            buttonSaveFile_EKP.Enabled = true;
+
+                dataGridViewMain_EKP.Rows[0].ReadOnly = true;
+                dataGridViewMain_EKP.Columns[0].ReadOnly = true;
+
+
+                for (int r = 0; r < rows; r++)
+                {
+                    for (int c = 0; c < columns; c++)
+                    {
+                        dataGridViewMain_EKP.Rows[r].Cells[c].Value = arrayValues[r, c];
+                    }
+                }
+
+                arrayValues = ds.GetDataBase(openFilePath);
+                buttonDelete_EKP.Visible = true;
+                buttonEdit_EKP.Visible = true;
+                buttonAdd_EKP.Visible = true;
+                buttonSearch_EKP.Visible = true;
+                buttonSaveFile_EKP.Enabled = true;
+            }
+            catch
+            {
+
+            }
         }
 
         private void buttonDelete_EKP_Click(object sender, EventArgs e)

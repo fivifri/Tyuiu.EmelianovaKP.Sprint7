@@ -31,28 +31,36 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             int[] arrayCapitals = new int[rows];
             string[] seriesArray = new string[rows];
 
-            for (int i = 0; i < rows; i++)
+            try 
             {
-                arrayCapitals[i] =  Convert.ToInt32(fmain.dataGridViewMain_EKP.Rows[i].Cells[4].Value);
-                string shop = fmain.dataGridViewMain_EKP.Rows[i].Cells[1].Value.ToString();
-                string id = fmain.dataGridViewMain_EKP.Rows[i].Cells[0].Value.ToString();
-                seriesArray[i] = String.Format("Название: {0,-30} Идентификатор: {1,-100}", shop, id);
+                for (int i = 0; i < rows; i++)
+                {
+                    arrayCapitals[i] = Convert.ToInt32(fmain.dataGridViewMain_EKP.Rows[i].Cells[4].Value);
+                    string shop = fmain.dataGridViewMain_EKP.Rows[i].Cells[1].Value.ToString();
+                    string id = fmain.dataGridViewMain_EKP.Rows[i].Cells[0].Value.ToString();
+                    seriesArray[i] = String.Format("Название: {0,-30} Идентификатор: {1,-100}", shop, id);
+                }
+
+                this.textBoxCountShops_EKP.Text = rows.ToString();
+                this.textBoxSumCapitals_EKP.Text = ds.SumCapital(ref arrayCapitals).ToString();
+                this.textBoxMinCapital_EKP.Text = ds.MinCapital(ref arrayCapitals).ToString();
+                this.textBoxMaxCapital_EKP.Text = ds.MaxCapital(ref arrayCapitals).ToString();
+                this.textBoxMeanCapital_EKP.Text = ds.MeanCapital(ref arrayCapitals).ToString();
+
+                this.chartCapital_EKP.Titles.Add("Капиталы владельцев");
+                this.chartCapital_EKP.Series.Clear();
+
+                for (int i = 0; i < seriesArray.Length; i++)
+                {
+                    Series series = this.chartCapital_EKP.Series.Add(seriesArray[i]);
+
+                    series.Points.Add(arrayCapitals[i]);
+                }
             }
-
-            this.textBoxCountShops_EKP.Text = rows.ToString();
-            this.textBoxSumCapitals_EKP.Text = ds.SumCapital(ref arrayCapitals).ToString();
-            this.textBoxMinCapital_EKP.Text = ds.MinCapital(ref arrayCapitals).ToString();
-            this.textBoxMaxCapital_EKP.Text = ds.MaxCapital(ref arrayCapitals).ToString();
-            this.textBoxMeanCapital_EKP.Text = ds.MeanCapital(ref arrayCapitals).ToString();
-
-            this.chartCapital_EKP.Titles.Add("Капиталы владельцев");
-            this.chartCapital_EKP.Series.Clear();
-
-            for (int i = 0; i < seriesArray.Length; i++)
+            catch
             {
-                Series series = this.chartCapital_EKP.Series.Add(seriesArray[i]);
-
-                series.Points.Add(arrayCapitals[i]);
+                MessageBox.Show("Данные некорректы! Невозможно отобразить статистику!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
             }
         }
     }
