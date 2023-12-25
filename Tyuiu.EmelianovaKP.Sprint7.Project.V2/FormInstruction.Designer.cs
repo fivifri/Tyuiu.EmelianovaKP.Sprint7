@@ -52,7 +52,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.textBoxInstruction_EKP.Multiline = true;
             this.textBoxInstruction_EKP.Name = "textBoxInstruction_EKP";
             this.textBoxInstruction_EKP.ReadOnly = true;
-            this.textBoxInstruction_EKP.Size = new System.Drawing.Size(596, 298);
+            this.textBoxInstruction_EKP.Size = new System.Drawing.Size(586, 342);
             this.textBoxInstruction_EKP.TabIndex = 1;
             this.textBoxInstruction_EKP.TabStop = false;
             // 
@@ -61,7 +61,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(610, 312);
+            this.ClientSize = new System.Drawing.Size(610, 366);
             this.Controls.Add(this.textBoxInstruction_EKP);
             this.Controls.Add(this.buttonOk_EKP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

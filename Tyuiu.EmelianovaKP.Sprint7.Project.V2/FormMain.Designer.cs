@@ -33,21 +33,22 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.panelLeft_EKP = new System.Windows.Forms.Panel();
             this.buttonStatistic_EKP = new System.Windows.Forms.Button();
+            this.openFileDialogTask_EKP = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialogTask_EKP = new System.Windows.Forms.SaveFileDialog();
+            this.toolTipButton_EKP = new System.Windows.Forms.ToolTip(this.components);
+            this.menuStripTopMenu_EKP = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewMain_EKP = new System.Windows.Forms.DataGridView();
+            this.panelRight_EKP = new System.Windows.Forms.Panel();
+            this.buttonSort_EKP = new System.Windows.Forms.Button();
             this.buttonSaveFile_EKP = new System.Windows.Forms.Button();
             this.buttonOpenFile_EKP = new System.Windows.Forms.Button();
             this.buttonSearch_EKP = new System.Windows.Forms.Button();
             this.buttonDelete_EKP = new System.Windows.Forms.Button();
             this.buttonAdd_EKP = new System.Windows.Forms.Button();
-            this.openFileDialogTask_EKP = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialogTask_EKP = new System.Windows.Forms.SaveFileDialog();
-            this.toolTipButton_EKP = new System.Windows.Forms.ToolTip(this.components);
-            this.menuStripTopMenu_EKP = new System.Windows.Forms.MenuStrip();
             this.помощьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.руководствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridViewMain_EKP = new System.Windows.Forms.DataGridView();
-            this.panelRight_EKP = new System.Windows.Forms.Panel();
             this.panelLeft_EKP.SuspendLayout();
             this.menuStripTopMenu_EKP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMain_EKP)).BeginInit();
@@ -57,6 +58,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             // panelLeft_EKP
             // 
             this.panelLeft_EKP.BackColor = System.Drawing.Color.Azure;
+            this.panelLeft_EKP.Controls.Add(this.buttonSort_EKP);
             this.panelLeft_EKP.Controls.Add(this.buttonStatistic_EKP);
             this.panelLeft_EKP.Controls.Add(this.buttonSaveFile_EKP);
             this.panelLeft_EKP.Controls.Add(this.buttonOpenFile_EKP);
@@ -78,10 +80,73 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.buttonStatistic_EKP.Size = new System.Drawing.Size(75, 23);
             this.buttonStatistic_EKP.TabIndex = 2;
             this.buttonStatistic_EKP.Text = "Статистика";
-            this.toolTipButton_EKP.SetToolTip(this.buttonStatistic_EKP, "Показать статистику по капиталу");
+            this.toolTipButton_EKP.SetToolTip(this.buttonStatistic_EKP, "Показать статистику и график");
             this.buttonStatistic_EKP.UseVisualStyleBackColor = true;
             this.buttonStatistic_EKP.Visible = false;
             this.buttonStatistic_EKP.Click += new System.EventHandler(this.buttonStatistic_EKP_Click);
+            // 
+            // openFileDialogTask_EKP
+            // 
+            this.openFileDialogTask_EKP.FileName = "openFileDialog1";
+            // 
+            // toolTipButton_EKP
+            // 
+            this.toolTipButton_EKP.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTipButton_EKP.ToolTipTitle = "Подсказка";
+            // 
+            // menuStripTopMenu_EKP
+            // 
+            this.menuStripTopMenu_EKP.BackColor = System.Drawing.Color.Azure;
+            this.menuStripTopMenu_EKP.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.помощьToolStripMenuItem,
+            this.toolStripMenuItem1});
+            this.menuStripTopMenu_EKP.Location = new System.Drawing.Point(0, 0);
+            this.menuStripTopMenu_EKP.Name = "menuStripTopMenu_EKP";
+            this.menuStripTopMenu_EKP.Size = new System.Drawing.Size(796, 24);
+            this.menuStripTopMenu_EKP.TabIndex = 2;
+            this.menuStripTopMenu_EKP.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
+            // 
+            // dataGridViewMain_EKP
+            // 
+            this.dataGridViewMain_EKP.AllowUserToAddRows = false;
+            this.dataGridViewMain_EKP.AllowUserToDeleteRows = false;
+            this.dataGridViewMain_EKP.AllowUserToOrderColumns = true;
+            this.dataGridViewMain_EKP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewMain_EKP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMain_EKP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewMain_EKP.Location = new System.Drawing.Point(5, 5);
+            this.dataGridViewMain_EKP.Name = "dataGridViewMain_EKP";
+            this.dataGridViewMain_EKP.Size = new System.Drawing.Size(701, 462);
+            this.dataGridViewMain_EKP.TabIndex = 0;
+            // 
+            // panelRight_EKP
+            // 
+            this.panelRight_EKP.BackColor = System.Drawing.Color.Azure;
+            this.panelRight_EKP.Controls.Add(this.dataGridViewMain_EKP);
+            this.panelRight_EKP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRight_EKP.Location = new System.Drawing.Point(85, 24);
+            this.panelRight_EKP.Name = "panelRight_EKP";
+            this.panelRight_EKP.Padding = new System.Windows.Forms.Padding(5);
+            this.panelRight_EKP.Size = new System.Drawing.Size(711, 472);
+            this.panelRight_EKP.TabIndex = 0;
+            // 
+            // buttonSort_EKP
+            // 
+            this.buttonSort_EKP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSort_EKP.Image = global::Tyuiu.EmelianovaKP.Sprint7.Project.V2.Properties.Resources.sort;
+            this.buttonSort_EKP.Location = new System.Drawing.Point(46, 202);
+            this.buttonSort_EKP.Name = "buttonSort_EKP";
+            this.buttonSort_EKP.Size = new System.Drawing.Size(34, 33);
+            this.buttonSort_EKP.TabIndex = 3;
+            this.toolTipButton_EKP.SetToolTip(this.buttonSort_EKP, "Отсортировать по выбранному столбцу по убыванию или по возрастанию");
+            this.buttonSort_EKP.UseVisualStyleBackColor = true;
+            this.buttonSort_EKP.Visible = false;
+            this.buttonSort_EKP.Click += new System.EventHandler(this.buttonSort_EKP_Click);
             // 
             // buttonSaveFile_EKP
             // 
@@ -142,27 +207,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.buttonAdd_EKP.Visible = false;
             this.buttonAdd_EKP.Click += new System.EventHandler(this.buttonAdd_EKP_Click);
             // 
-            // openFileDialogTask_EKP
-            // 
-            this.openFileDialogTask_EKP.FileName = "openFileDialog1";
-            // 
-            // toolTipButton_EKP
-            // 
-            this.toolTipButton_EKP.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTipButton_EKP.ToolTipTitle = "Подсказка";
-            // 
-            // menuStripTopMenu_EKP
-            // 
-            this.menuStripTopMenu_EKP.BackColor = System.Drawing.Color.Azure;
-            this.menuStripTopMenu_EKP.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.помощьToolStripMenuItem,
-            this.toolStripMenuItem1});
-            this.menuStripTopMenu_EKP.Location = new System.Drawing.Point(0, 0);
-            this.menuStripTopMenu_EKP.Name = "menuStripTopMenu_EKP";
-            this.menuStripTopMenu_EKP.Size = new System.Drawing.Size(796, 24);
-            this.menuStripTopMenu_EKP.TabIndex = 2;
-            this.menuStripTopMenu_EKP.Text = "menuStrip1";
-            // 
             // помощьToolStripMenuItem
             // 
             this.помощьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -187,35 +231,6 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             this.руководствоToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.руководствоToolStripMenuItem.Text = "Руководство";
             this.руководствоToolStripMenuItem.Click += new System.EventHandler(this.руководствоToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
-            // 
-            // dataGridViewMain_EKP
-            // 
-            this.dataGridViewMain_EKP.AllowUserToAddRows = false;
-            this.dataGridViewMain_EKP.AllowUserToDeleteRows = false;
-            this.dataGridViewMain_EKP.AllowUserToOrderColumns = true;
-            this.dataGridViewMain_EKP.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewMain_EKP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMain_EKP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewMain_EKP.Location = new System.Drawing.Point(5, 5);
-            this.dataGridViewMain_EKP.Name = "dataGridViewMain_EKP";
-            this.dataGridViewMain_EKP.Size = new System.Drawing.Size(701, 462);
-            this.dataGridViewMain_EKP.TabIndex = 0;
-            // 
-            // panelRight_EKP
-            // 
-            this.panelRight_EKP.BackColor = System.Drawing.Color.Azure;
-            this.panelRight_EKP.Controls.Add(this.dataGridViewMain_EKP);
-            this.panelRight_EKP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight_EKP.Location = new System.Drawing.Point(85, 24);
-            this.panelRight_EKP.Name = "panelRight_EKP";
-            this.panelRight_EKP.Padding = new System.Windows.Forms.Padding(5);
-            this.panelRight_EKP.Size = new System.Drawing.Size(711, 472);
-            this.panelRight_EKP.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -259,6 +274,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Button buttonStatistic_EKP;
         public System.Windows.Forms.Button buttonAdd_EKP;
+        private System.Windows.Forms.Button buttonSort_EKP;
     }
 }
 

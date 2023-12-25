@@ -69,6 +69,7 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
 
                 buttonDelete_EKP.Visible = true;
                 buttonAdd_EKP.Visible = true;
+                buttonSort_EKP.Visible = true;
                 buttonSearch_EKP.Visible = true;
                 buttonSaveFile_EKP.Enabled = true;
             }
@@ -178,6 +179,12 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         {
             FormChooseStatistic formChooseStatistic = new FormChooseStatistic(this);
             formChooseStatistic.ShowDialog();
+        }
+
+        private void buttonSort_EKP_Click(object sender, EventArgs e)
+        {
+            FormSort formSort = new FormSort(this);
+            formSort.ShowDialog();
         }
     }
 }

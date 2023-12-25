@@ -77,6 +77,12 @@
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSort.Designer.cs">
+      <DependentUpon>FormSort.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormStatistic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSort.resx">
+      <DependentUpon>FormSort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStatistic.resx">
       <DependentUpon>FormStatistic.cs</DependentUpon>
@@ -152,6 +161,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\me.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
