@@ -59,18 +59,18 @@
             this.labelCountShops_EKP.AutoSize = true;
             this.labelCountShops_EKP.Location = new System.Drawing.Point(12, 19);
             this.labelCountShops_EKP.Name = "labelCountShops_EKP";
-            this.labelCountShops_EKP.Size = new System.Drawing.Size(127, 13);
+            this.labelCountShops_EKP.Size = new System.Drawing.Size(69, 13);
             this.labelCountShops_EKP.TabIndex = 1;
-            this.labelCountShops_EKP.Text = "Количество магазинов:";
+            this.labelCountShops_EKP.Text = "Количество:";
             // 
             // labelSumCapitals_EKP
             // 
             this.labelSumCapitals_EKP.AutoSize = true;
             this.labelSumCapitals_EKP.Location = new System.Drawing.Point(153, 19);
             this.labelSumCapitals_EKP.Name = "labelSumCapitals_EKP";
-            this.labelSumCapitals_EKP.Size = new System.Drawing.Size(100, 13);
+            this.labelSumCapitals_EKP.Size = new System.Drawing.Size(44, 13);
             this.labelSumCapitals_EKP.TabIndex = 3;
-            this.labelSumCapitals_EKP.Text = "Сумма капиталов:";
+            this.labelSumCapitals_EKP.Text = "Сумма:";
             // 
             // textBoxSumCapitals_EKP
             // 
@@ -86,9 +86,9 @@
             this.labelMinCapital_EKP.AutoSize = true;
             this.labelMinCapital_EKP.Location = new System.Drawing.Point(290, 19);
             this.labelMinCapital_EKP.Name = "labelMinCapital_EKP";
-            this.labelMinCapital_EKP.Size = new System.Drawing.Size(127, 13);
+            this.labelMinCapital_EKP.Size = new System.Drawing.Size(58, 13);
             this.labelMinCapital_EKP.TabIndex = 5;
-            this.labelMinCapital_EKP.Text = "Минимальный капитал:";
+            this.labelMinCapital_EKP.Text = "Минимум:";
             // 
             // textBoxMinCapital_EKP
             // 
@@ -104,9 +104,9 @@
             this.labelMaxCapital_EKP.AutoSize = true;
             this.labelMaxCapital_EKP.Location = new System.Drawing.Point(429, 19);
             this.labelMaxCapital_EKP.Name = "labelMaxCapital_EKP";
-            this.labelMaxCapital_EKP.Size = new System.Drawing.Size(133, 13);
+            this.labelMaxCapital_EKP.Size = new System.Drawing.Size(64, 13);
             this.labelMaxCapital_EKP.TabIndex = 7;
-            this.labelMaxCapital_EKP.Text = "Максимальный капитал:";
+            this.labelMaxCapital_EKP.Text = "Максимум:";
             // 
             // textBoxMaxCapital_EKP
             // 
@@ -122,9 +122,9 @@
             this.labelMeanCapital_EKP.AutoSize = true;
             this.labelMeanCapital_EKP.Location = new System.Drawing.Point(577, 19);
             this.labelMeanCapital_EKP.Name = "labelMeanCapital_EKP";
-            this.labelMeanCapital_EKP.Size = new System.Drawing.Size(97, 13);
+            this.labelMeanCapital_EKP.Size = new System.Drawing.Size(53, 13);
             this.labelMeanCapital_EKP.TabIndex = 9;
-            this.labelMeanCapital_EKP.Text = "Средний капитал:";
+            this.labelMeanCapital_EKP.Text = "Среднее:";
             // 
             // textBoxMeanCapital_EKP
             // 
@@ -149,7 +149,7 @@
             this.chartCapital_EKP.Series.Add(series1);
             this.chartCapital_EKP.Size = new System.Drawing.Size(692, 368);
             this.chartCapital_EKP.TabIndex = 10;
-            this.chartCapital_EKP.Text = "Капитал";
+            this.chartCapital_EKP.Text = "Статистика";
             // 
             // FormStatistic
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.textBoxCountShops_EKP);
             this.Name = "FormStatistic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Статистика по капиталу";
+            this.Text = "Статистика";
             this.Load += new System.EventHandler(this.FormStatistic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chartCapital_EKP)).EndInit();
             this.ResumeLayout(false);

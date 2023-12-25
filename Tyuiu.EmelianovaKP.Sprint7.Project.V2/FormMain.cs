@@ -176,8 +176,8 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
 
         private void buttonStatistic_EKP_Click(object sender, EventArgs e)
         {
-            FormStatistic formStatistic = new FormStatistic(this);
-            formStatistic.ShowDialog();
+            FormChooseStatistic formChooseStatistic = new FormChooseStatistic(this);
+            formChooseStatistic.ShowDialog();
         }
     }
 }

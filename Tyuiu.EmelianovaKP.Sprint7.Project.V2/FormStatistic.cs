@@ -15,11 +15,16 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
 {
     public partial class FormStatistic : Form
     {
+        int j;
+        int k;
+
         FormMain fmain;
-        public FormStatistic(FormMain form)
+        public FormStatistic(FormMain form, int index, int index2)
         {
             InitializeComponent();
             this.fmain = form;
+            j = index;
+            k = index2;
         }
 
         DataService ds = new DataService();
@@ -28,33 +33,32 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
         {
             int rows = fmain.dataGridViewMain_EKP.RowCount;
 
-            int[] arrayCapitals = new int[rows];
-            string[] seriesArray = new string[rows];
+            int[] array = new int[rows];
+            string[] arrayLegend = new string[rows];
 
             try 
             {
                 for (int i = 0; i < rows; i++)
                 {
-                    arrayCapitals[i] = Convert.ToInt32(fmain.dataGridViewMain_EKP.Rows[i].Cells[4].Value);
-                    string shop = fmain.dataGridViewMain_EKP.Rows[i].Cells[1].Value.ToString();
-                    string id = fmain.dataGridViewMain_EKP.Rows[i].Cells[0].Value.ToString();
-                    seriesArray[i] = String.Format("Название: {0,-30} Идентификатор: {1,-100}", shop, id);
+                    array[i] = Convert.ToInt32(fmain.dataGridViewMain_EKP.Rows[i].Cells[j].Value);
+                    arrayLegend[i] = fmain.dataGridViewMain_EKP.Rows[i].Cells[k].Value.ToString();
+                    
                 }
 
                 this.textBoxCountShops_EKP.Text = rows.ToString();
-                this.textBoxSumCapitals_EKP.Text = ds.SumCapital(ref arrayCapitals).ToString();
-                this.textBoxMinCapital_EKP.Text = ds.MinCapital(ref arrayCapitals).ToString();
-                this.textBoxMaxCapital_EKP.Text = ds.MaxCapital(ref arrayCapitals).ToString();
-                this.textBoxMeanCapital_EKP.Text = ds.MeanCapital(ref arrayCapitals).ToString();
+                this.textBoxSumCapitals_EKP.Text = ds.SumCapital(ref array).ToString();
+                this.textBoxMinCapital_EKP.Text = ds.MinCapital(ref array).ToString();
+                this.textBoxMaxCapital_EKP.Text = ds.MaxCapital(ref array).ToString();
+                this.textBoxMeanCapital_EKP.Text = ds.MeanCapital(ref array).ToString();
 
-                this.chartCapital_EKP.Titles.Add("Капиталы владельцев");
+                this.chartCapital_EKP.Titles.Add("Статистика по столбцу \"" + fmain.dataGridViewMain_EKP.Columns[j].HeaderText + "\".");
                 this.chartCapital_EKP.Series.Clear();
 
-                for (int i = 0; i < seriesArray.Length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    Series series = this.chartCapital_EKP.Series.Add(seriesArray[i]);
+                    Series series = this.chartCapital_EKP.Series.Add(fmain.dataGridViewMain_EKP.Columns[k].HeaderText + ": " + arrayLegend[i]);
 
-                    series.Points.Add(arrayCapitals[i]);
+                    series.Points.Add(array[i]);
                 }
             }
             catch

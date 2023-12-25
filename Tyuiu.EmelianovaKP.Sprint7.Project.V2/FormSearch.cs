@@ -26,13 +26,14 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
                 for (int i = 0; i < fmain.dataGridViewMain_EKP.RowCount; i++)
                 {
                     fmain.dataGridViewMain_EKP.Rows[i].Selected = false;
-                    for (int j = comboBoxSearchFilter_EKP.SelectedIndex; j < fmain.dataGridViewMain_EKP.ColumnCount; j++)
-                        if (fmain.dataGridViewMain_EKP.Rows[i].Cells[j].Value != null)
-                            if (fmain.dataGridViewMain_EKP.Rows[i].Cells[j].Value.ToString().Contains(textBoxFind_EKP.Text))
-                            {
-                                fmain.dataGridViewMain_EKP.Rows[i].Selected = true;
-                                break;
-                            }
+                    int j = comboBoxSearchFilter_EKP.SelectedIndex;
+                    if (fmain.dataGridViewMain_EKP.Rows[i].Cells[j].Value != null)
+                    {
+                        if (fmain.dataGridViewMain_EKP.Rows[i].Cells[j].Value.ToString().Contains(textBoxFind_EKP.Text))
+                        {
+                            fmain.dataGridViewMain_EKP.Rows[i].Selected = true;
+                        }
+                    }
                 }
                 this.Close();
             }
@@ -40,6 +41,25 @@ namespace Tyuiu.EmelianovaKP.Sprint7.Project.V2
             {
                 MessageBox.Show("Ошибка поиска!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FormSearch_Load(object sender, EventArgs e)
+        {
+            int columns = fmain.dataGridViewMain_EKP.ColumnCount;
+
+            string[] columnsHeaders = new string[columns];
+
+            for (int i = 0; i < columns; ++i)
+            {
+                columnsHeaders[i] = fmain.dataGridViewMain_EKP.Columns[i].HeaderText;
+            }
+
+            this.comboBoxSearchFilter_EKP.Items.AddRange(columnsHeaders);
+        }
+
+        private void comboBoxSearchFilter_EKP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
